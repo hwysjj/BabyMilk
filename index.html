@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+    <meta charset="utf-8">
+    <title>baby records</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script data-require="moment.js@2.5.0" data-semver="2.5.0" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.0/moment.js"></script>
+    <script data-require="angularjs@1.5.0" data-semver="1.5.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.js"></script>
+    <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+</head>
+
+<body ng-controller="MilkCtrl">
+    <header>
+        <h3 class="text-center">Log Milk</h3>
+    </header>
+    <section>
+        <div class="container">
+            <form name="inputForm" class="form-inline" ng-submit="save()" novalidate>
+                <div class="form-group">
+                    <label for="inputMilk">Milk (ml):</label>
+                    <input id="inputMilk" name="inputMilk" type="text" ng-model="inputMilk" ng-pattern="/^[1-9]\d*$/" required maxlength="4"
+                        placeholder="input milk in ml" class="form-control" />
+                    <!--<p id="message" ng-class="{'hide-element': true}">not an integer</p>-->
+                </div>
+                <button id="submit" type="submit" ng-class="{'btn-disabled': inputForm.imputMilk.$invalid}" ng-disabled="inputForm.imputMilk.$invalid"
+                    class="btn btn-default pull-right form-control">Save</button>
+            </form>
+        </div>
+    </section>
+    <section id="milkHistory">
+        <div class="container">
+            <div>
+                <div class="pull-left">Milk History:</div>
+                <div class="pull-right">Total: <span id="milkTotal">{{total}}ml</span></div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr ng-repeat="item in records">
+                            <td>{{item.time}} - {{item.milliliters}}ml</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <footer class="navbar-fixed-bottom">
+        <div class="text-center"><a id="milkBtn" class="btn btn-default active">Log Milk</a><a ng-click="clearAll()" class="btn btn-default">Clear Records</a></div>
+    </footer>
+</body>
+
+</html>

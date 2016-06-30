@@ -1,0 +1,58 @@
+/*part glabal style*/
+
+html {
+	width: 100%;
+	-webkit-text-size-ajust: none;
+	-moz-text-size-ajust: none;
+	-ms-text-size-ajust: none;
+	-o-text-size-ajust: none;
+	text-size-ajust: none;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	font-family: "Raleway Arail"
+}
+
+section {
+	margin: 50px 0;
+}
+
+header{
+	background-color: #8AA0B2;
+	padding: 10px 0;
+	color: #fff;
+}
+	header h3{
+		margin: 0;
+	}
+
+footer {
+	padding: 10px 0;
+	background-color: #8AA0B2;
+}
+
+.hide-element {
+	visibility: hidden;
+}
+
+.show-element {
+	visibility: visible;
+}
+
+/*end part glabal style*/
+
+#message {
+	color: red;
+}
+
+.btn {
+	color: #fff;
+	background-color: #99AABD;
+}
+	.btn.active {
+		color: #fff;
+		background-color: #496B9A;
+	}
