@@ -1,6 +1,6 @@
 var app = angular.module('App', []);
 
-app.controller('MilkCtrl', function ($scope, MilkService) {
+app.controller('MilkCtrl', function ($scope, MilkService, Reg_Integer_Validate) {
     angular.extend($scope, {
         isInteger: true,
 		total: 0
@@ -13,8 +13,9 @@ app.controller('MilkCtrl', function ($scope, MilkService) {
 		});
 	}
     $scope.save = function () {
-		if(!(/^[1-9]\d*$/.test($scope.inputMilk))) {
-			alert(1111);
+		if(!(Reg_Integer_Validate.test($scope.inputMilk))) {
+			alert('input invalid');
+			$scope.inputMilk = null;
 			return;
 		}
 
@@ -27,12 +28,15 @@ app.controller('MilkCtrl', function ($scope, MilkService) {
 		$scope.records.map(function (item) {
 			$scope.total += parseInt(item.milliliters);
 		});
+		alert('success');
     };
 	$scope.clearAll = function () {
 		$scope.records = MilkService.removeAll();
 		$scope.total = 0;
     };
 });
+
+app.constant('Reg_Integer_Validate', /^[1-9]\d*$/);
 
 app.service('MilkService', function (LocalStorage) {
 	var _records = [], self = this;
