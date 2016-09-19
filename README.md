@@ -2,7 +2,6 @@
 Using [lite-server](https://github.com/johnpapa/lite-server) to build this project server, and the [lite-server](https://github.com/johnpapa/lite-server) will read index.html  bydefault, you can also change the default configuration by updating bs-config.json.
 
 ## Setup front-end DEV environment
------
 ### cd the project folder
 ### Install
 * make sure you have `npm` installed.
@@ -30,6 +29,9 @@ And [lite-server](https://github.com/johnpapa/lite-server) is listening at `loca
 
 ## Mockup
 iPad:
+
 ![iPad](mockup/IPAD.png)
+
 iPhone:
+
 ![iPhone](mockup/IPHONElogo.png)
