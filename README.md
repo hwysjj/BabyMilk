@@ -7,11 +7,11 @@ Using [lite-server](https://github.com/johnpapa/lite-server) to build this proje
 * make sure you have `npm` installed.
 * Install the dependencies.
 ```
-npm install
+$ npm install
 ```
 ### you can then start lite-server via:
 ```
-npm start
+$ npm start
 ```
 And [lite-server](https://github.com/johnpapa/lite-server) is listening at `localhost: 3000` bydefault
 
