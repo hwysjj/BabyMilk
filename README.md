@@ -30,8 +30,8 @@ And [lite-server](https://github.com/johnpapa/lite-server) is listening at `loca
 ## Mockup
 iPad:
 
-![iPad](mockup/IPAD.png)
+![iPad](IPAD.png)
 
 iPhone:
 
-![iPhone](mockup/IPHONElogo.png)
+![iPhone](mockup/IPHONE.png)
